@@ -20,19 +20,18 @@ struct ContentView: View {
     @State private var guessButtonDisabled = false
     @State private var message = ""
     private let emojis = ["🍕", "🍎", "🍏", "🐵", "👽", "🧠", "🧜🏽‍♀️", "🧙🏿‍♂️", "🥷", "🐶", "🐹", "🐣", "🦄", "🐝", "🦉", "🦋", "🦖", "🐙", "🦞", "🐟", "🦔", "🐲", "🌻", "🌍", "🌈", "🍔", "🌮", "🍦", "🍩", "🍪"]
+    
     var body: some View {
         VStack {
-            Group {
-                Text(firstNumberEmojis)
-                    .font(.system(size: 80))
-                    .minimumScaleFactor(0.5)
-                    .multilineTextAlignment(.center)
-                Text("+")
-                Text(secondNumberEmojis)
-                    .font(.system(size: 80))
-                    .minimumScaleFactor(0.5)
-                    .multilineTextAlignment(.center)
-            }
+            Text(firstNumberEmojis)
+                .font(.system(size: 80))
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
+            Text("+")
+            Text(secondNumberEmojis)
+                .font(.system(size: 80))
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
             
             Spacer()
             
@@ -122,7 +121,7 @@ struct ContentView: View {
     
     func playSound(soundName: String) {
         // Requires AVFAudio import, state variable for AVAudioPlayer
-
+        
         guard let soundFile = NSDataAsset(name: soundName) else {
             print("􀀳 Could not read sound file named \(soundName)")
             return
@@ -134,9 +133,9 @@ struct ContentView: View {
         } catch {
             print("􀀳 ERROR: \(error.localizedDescription) playing audio player.")
         }
-
+        
     }
-
+    
 }
 
 #Preview {
